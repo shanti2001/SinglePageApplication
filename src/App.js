@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import{
+    BrowserRouter,
+    Switch,
+    Route
+    
+} from 'react-router-dom'
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/fooer';
+import Homepage from './components/Homepage/Homepage';
+const App =()=>{
+    const demo =(
+        
+                <BrowserRouter>
+                <Navbar/>
+                    <div id="page">
+                        <div id="container">
+                            <Switch>
+                                <Route exact path='/'>
+                                    <Homepage/>
+                                </Route>
+                                <Route exact path='/about-us'>
+                                    <h1>WellCome to About Us</h1>
+                                </Route>
+                                <Route exact path='/images'>
+                                    <h1>WellCome to Images</h1>
+                                </Route>
+                            </Switch>
+                        </div>
+                    </div>
+                    <Footer/>
+                </BrowserRouter>
+                // {/* <h1>njdnsk</h1> */}
+            
+    );
+    return demo;  
+    
 }
-
 export default App;
